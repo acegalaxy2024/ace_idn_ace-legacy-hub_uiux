@@ -1,0 +1,198 @@
+/* ==================== PORTAL HOME SCREEN ==================== */
+#portal-home {
+  background: linear-gradient(180deg, #E8B4B8 0%, #F5DEB3 50%, #DEB887 100%);
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  display: flex;
+  padding: 16px;
+  gap: 16px;
+  overflow: hidden;
+}
+
+/* Left Section - Featured Banner */
+.featured-section {
+  width: 180px;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.featured-banner {
+  flex: 1;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 20px;
+  border: 3px solid var(--primary-gold);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featured-content {
+  text-align: center;
+  color: white;
+}
+
+.featured-content h2 {
+  font-size: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.featured-content p {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* Mascot Character */
+.mascot {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  font-size: 80px;
+  filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.3));
+}
+
+/* Game Section - Grid Layout matching preview.webp */
+.game-section {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.2fr repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 12px;
+  overflow: hidden;
+}
+
+/* Featured Game (Kamar Biasa) - Spans 2 rows */
+.game-tile.featured {
+  grid-row: span 2;
+  background: linear-gradient(180deg, #FFF8E1 0%, #FFE082 50%, #FFD54F 100%);
+  border-radius: 20px;
+  border: 4px solid rgba(255,255,255,0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.game-tile.featured:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+}
+
+.game-tile.featured:active {
+  transform: scale(0.98);
+}
+
+.game-tile.featured .game-icon {
+  font-size: 72px;
+  margin-bottom: 12px;
+}
+
+.game-tile.featured .game-name {
+  font-size: 18px;
+  color: #8B4513;
+}
+
+/* Regular Game Tiles */
+.game-tile {
+  background: linear-gradient(135deg, var(--primary-gold) 0%, var(--primary-orange) 100%);
+  border-radius: 16px;
+  border: 3px solid rgba(255,255,255,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.game-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.game-tile:active {
+  transform: scale(0.98);
+}
+
+.game-icon {
+  font-size: 42px;
+  margin-bottom: 6px;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+}
+
+.game-name {
+  font-weight: 800;
+  color: white;
+  font-size: 14px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Game Tile Themes */
+.game-tile.poker {
+  background: linear-gradient(135deg, var(--poker-dark) 0%, var(--poker-teal) 100%);
+}
+
+.game-tile.ludo {
+  background: linear-gradient(135deg, var(--ludo-blue) 0%, var(--ludo-green) 100%);
+}
+
+.game-tile.slots {
+  background: linear-gradient(135deg, #FFD700 0%, #FF4500 100%);
+}
+
+.game-tile.qiuqiu {
+  background: linear-gradient(135deg, var(--domino-purple) 0%, #E91E63 100%);
+}
+
+.game-tile.sports {
+  background: linear-gradient(135deg, #9C27B0 0%, #E040FB 100%);
+}
+
+.game-tile.games {
+  background: linear-gradient(135deg, #FF9800 0%, #FF5722 100%);
+}
+
+/* Last Played Badge */
+.last-played {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  background: linear-gradient(135deg, #228B22 0%, #006400 100%);
+  padding: 12px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.last-played:hover {
+  transform: scale(1.05);
+}
+
+.last-played-text {
+  color: #90EE90;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.last-played-game {
+  color: white;
+  font-size: 12px;
+}

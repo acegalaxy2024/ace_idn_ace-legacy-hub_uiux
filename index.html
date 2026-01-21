@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Portal - Interactive Prototype</title>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/portal-home.css">
+  <link rel="stylesheet" href="css/game-lobby.css">
+  <link rel="stylesheet" href="css/subgame-selection.css">
+  <link rel="stylesheet" href="css/room-selection.css">
+  <link rel="stylesheet" href="css/gameplay.css">
+  <link rel="stylesheet" href="css/modals.css">
+  <link rel="stylesheet" href="css/force-portrait.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="screen-container">
+
+    <!-- ==================== PORTAL HOME SCREEN ==================== -->
+    <div id="portal-home" class="screen active">
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div class="user-info">
+          <div class="avatar">👤</div>
+          <div class="user-details">
+            <span class="username">guest-44R79yvv</span>
+            <div class="currency-bar">
+              <div class="currency-item">
+                <div class="coin-icon"></div>
+                <span class="currency-value">81,476</span>
+              </div>
+              <div class="currency-item">
+                <div class="diamond-icon"></div>
+                <span class="currency-value">0</span>
+              </div>
+            </div>
+          </div>
+          <span class="vip-badge">VIP</span>
+        </div>
+
+        <div class="top-actions">
+          <div class="action-btn" onclick="showModal('event')">
+            <div class="action-icon">📅</div>
+            <span class="action-label">Event</span>
+          </div>
+          <div class="action-btn" onclick="showModal('rebate')">
+            <div class="action-icon">💰</div>
+            <span class="action-label">Rebate</span>
+          </div>
+          <div class="action-btn" onclick="showModal('spin')">
+            <div class="action-icon">🎡</div>
+            <span class="action-label">Lucky Spin</span>
+          </div>
+          <div class="action-btn" onclick="showModal('follow')">
+            <div class="action-icon">👥</div>
+            <span class="action-label">Follow Us</span>
+          </div>
+          <div class="menu-btn" onclick="showModal('settings')">
+            <div class="menu-lines">
+              <div class="menu-line"></div>
+              <div class="menu-line"></div>
+              <div class="menu-line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Featured Section -->
+        <div class="featured-section">
+          <div class="featured-banner">
+            <div class="featured-content">
+              <h2>🎮 FEATURED</h2>
+              <p>New Games & Events</p>
+            </div>
+            <div class="mascot">🎭</div>
+          </div>
+        </div>
+
+        <!-- Game Section - Grid Layout -->
+        <div class="game-section">
+          <!-- Featured Game - Kamar Biasa (Spans 2 rows) -->
+          <div class="game-tile featured" onclick="navigateToLobby('kamar-biasa')">
+            <div class="game-icon">🏝️</div>
+            <div class="game-name">Kamar Biasa</div>
+          </div>
+          <!-- Row 1: Poker, Ludo, Slots -->
+          <div class="game-tile poker" onclick="navigateToLobby('poker')">
+            <div class="game-icon">🃏</div>
+            <div class="game-name">Poker</div>
+          </div>
+          <div class="game-tile ludo" onclick="navigateToLobby('ludo')">
+            <div class="game-icon">🎲</div>
+            <div class="game-name">Ludo</div>
+          </div>
+          <div class="game-tile slots" onclick="navigateToLobby('slots')">
+            <div class="game-icon">🎰</div>
+            <div class="game-name">Slots</div>
+          </div>
+          <!-- Row 2: QiuQiu, Sports, Games -->
+          <div class="game-tile qiuqiu" onclick="navigateToLobby('qiuqiu')">
+            <div class="game-icon">🀄</div>
+            <div class="game-name">QiuQiu</div>
+          </div>
+          <div class="game-tile sports" onclick="navigateToLobby('sports')">
+            <div class="game-icon">⚽</div>
+            <div class="game-name">Sports</div>
+          </div>
+          <div class="game-tile games" onclick="navigateToLobby('games')">
+            <div class="game-icon">🎮</div>
+            <div class="game-name">Games</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Navigation -->
+      <div class="bottom-nav">
+        <div class="nav-item" onclick="showModal('shop')">
+          <span class="nav-icon">🛒</span>
+          <span class="nav-label">Shop</span>
+        </div>
+        <div class="nav-item" onclick="showModal('inventory')">
+          <span class="nav-icon">🎒</span>
+          <span class="nav-label">Inventory</span>
+        </div>
+        <div class="nav-item" onclick="showModal('vip')">
+          <span class="nav-icon">👑</span>
+          <span class="nav-label">VIP</span>
+        </div>
+        <div class="nav-item" onclick="showModal('leaderboard')">
+          <span class="nav-icon">🏆</span>
+          <span class="nav-label">Leaderboard</span>
+        </div>
+        <div class="nav-item" onclick="showModal('safebox')">
+          <span class="nav-icon">🔐</span>
+          <span class="nav-label">Safe Box</span>
+        </div>
+        <div class="nav-item" onclick="showModal('referral')">
+          <span class="nav-icon">🤝</span>
+          <span class="nav-label">Referral</span>
+        </div>
+        <div class="nav-item" onclick="showModal('friends')">
+          <span class="nav-icon">👥</span>
+          <span class="nav-label">Friends</span>
+        </div>
+        <div class="nav-item" onclick="showModal('mail')">
+          <span class="nav-icon">📧</span>
+          <span class="nav-label">Mail Box</span>
+        </div>
+      </div>
+
+      <!-- Last Played Badge -->
+      <div class="last-played" onclick="navigateToLobby('poker')">
+        <div>
+          <div class="last-played-text">LAST PLAYED</div>
+          <div class="last-played-game">Poker - Rookie</div>
+        </div>
+        <span>▶</span>
+      </div>
+    </div>
+
+    <!-- ==================== GAME LOBBY SCREEN ==================== -->
+    <div id="game-lobby" class="screen">
+      <!-- Lobby Header -->
+      <div class="lobby-header">
+        <button class="back-btn" onclick="navigateBack()">
+          <span class="back-arrow">←</span>
+        </button>
+        <h1 class="lobby-title" id="lobby-title">
+          <span class="title-text">KAMAR BIASA</span>
+          <span class="title-sparkles">✧ ✦ ✧</span>
+        </h1>
+        <div class="currency-display">
+          <div class="coin-icon-lg"></div>
+          <span class="currency-amount">81476.4225</span>
+        </div>
+      </div>
+
+      <!-- Lobby Content with Sidebar -->
+      <div class="lobby-content">
+        <!-- Sidebar -->
+        <div class="lobby-sidebar" id="lobby-sidebar">
+          <div class="sidebar-item active" data-category="kamar-biasa">
+            <span class="sidebar-icon">🏝️</span>
+            <span class="sidebar-text">Kamar Biasa</span>
+          </div>
+        </div>
+
+        <!-- Room List -->
+        <div class="room-list" id="room-list">
+          <!-- Rooms will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SUB-GAME SELECTION SCREEN (for Slots/Games) ==================== -->
+    <div id="subgame-selection" class="screen">
+      <!-- Header -->
+      <div class="lobby-header">
+        <button class="back-btn" onclick="navigateBack()">
+          <span class="back-arrow">←</span>
+        </button>
+        <h1 class="lobby-title">
+          <span class="title-text" id="subgame-title">SLOTS</span>
+          <span class="title-sparkles">✧ ✦ ✧</span>
+        </h1>
+        <div class="currency-display">
+          <div class="coin-icon-lg"></div>
+          <span class="currency-amount">81476.4225</span>
+        </div>
+      </div>
+
+      <!-- Sub-game Grid -->
+      <div class="subgame-content">
+        <div class="subgame-grid" id="subgame-grid">
+          <!-- Sub-games will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== GAMEPLAY SCREEN ==================== -->
+    <div id="gameplay" class="screen">
+      <!-- Rotate to Portrait Prompt (shown in landscape for poker/ludo) -->
+      <div class="rotate-prompt">
+        <div class="rotate-icon">📱</div>
+        <div class="rotate-text">Vui lòng xoay điện thoại</div>
+        <div class="rotate-subtext">Game này yêu cầu chế độ Portrait</div>
+        <button class="simulate-btn" onclick="enableSimulatePortrait()">
+          Hoặc nhấn để tiếp tục
+        </button>
+      </div>
+
+      <!-- Game Content Wrapper -->
+      <div class="gameplay-content">
+        <!-- Header -->
+        <div class="gameplay-header">
+          <button class="pause-btn" onclick="showExitModal()">
+            <span class="pause-icon">⏸</span>
+          </button>
+          <div class="game-info">
+            <div class="pot-display">POT: 50,000</div>
+            <div class="timer-display">00:30</div>
+          </div>
+          <div class="currency-bar">
+            <div class="currency-item">
+              <div class="coin-icon"></div>
+              <span class="currency-value">81,476</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Game Board -->
+        <div class="game-board" id="game-board">
+          <div class="poker-table">
+            <div class="poker-table-inner">POKER TABLE</div>
+          </div>
+        </div>
+
+        <!-- Players Bar -->
+        <div class="players-bar">
+          <div class="player-slot current">
+            <div class="player-avatar">👤</div>
+            <span class="player-name">You</span>
+            <span class="player-chips">81,476</span>
+          </div>
+          <div class="player-slot">
+            <div class="player-avatar">🤖</div>
+            <span class="player-name">Bot 1</span>
+            <span class="player-chips">120,000</span>
+          </div>
+          <div class="player-slot">
+            <div class="player-avatar">🤖</div>
+            <span class="player-name">Bot 2</span>
+            <span class="player-chips">95,000</span>
+          </div>
+          <div class="player-slot">
+            <div class="player-avatar">🤖</div>
+            <span class="player-name">Bot 3</span>
+            <span class="player-chips">88,000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ==================== MODALS ==================== -->
+
+  <!-- Generic Modal -->
+  <div id="generic-modal" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-frame">
+        <div class="modal-header">
+          <span class="modal-decoration">🍊</span>
+          <h2 class="modal-title" id="modal-title">MODAL</h2>
+          <button class="modal-close" onclick="closeAllModals()">
+            <span class="modal-close-icon">✕</span>
+          </button>
+        </div>
+        <div class="modal-content" id="modal-content">
+          <p style="color: white; text-align: center;">Modal content here</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Exit Confirmation Modal -->
+  <div id="exit-modal" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-frame">
+        <div class="modal-header">
+          <span class="modal-decoration">⚠️</span>
+          <h2 class="modal-title">EXIT GAME</h2>
+          <button class="modal-close" onclick="closeAllModals()">
+            <span class="modal-close-icon">✕</span>
+          </button>
+        </div>
+        <div class="modal-content">
+          <div class="exit-modal-content">
+            <h3>Bạn có chắc muốn thoát?</h3>
+            <p>Tiến trình game sẽ bị mất nếu bạn thoát bây giờ.</p>
+            <div class="exit-modal-buttons">
+              <button class="exit-btn confirm" onclick="exitToLobby()">Thoát Game</button>
+              <button class="exit-btn cancel" onclick="closeAllModals()">Tiếp tục chơi</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Overlay -->
+  <div id="loading" class="loading-overlay">
+    <div class="loading-logo" id="loading-logo">🎮</div>
+    <div class="loading-spinner"></div>
+    <div class="loading-text" id="loading-text">Đang tải...</div>
+  </div>
+
+  <!-- JavaScript Files -->
+  <script src="js/game-data.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/modals.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

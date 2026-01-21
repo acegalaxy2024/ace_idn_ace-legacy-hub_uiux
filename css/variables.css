@@ -1,0 +1,30 @@
+/* ==================== CSS VARIABLES ==================== */
+:root {
+  /* Primary Colors */
+  --primary-orange: #E67E22;
+  --primary-orange-dark: #D35400;
+  --primary-gold: #F39C12;
+  --primary-brown: #8B4513;
+
+  /* Semantic Colors */
+  --semantic-success: #27AE60;
+  --semantic-success-light: #2ECC71;
+  --semantic-error: #E74C3C;
+  --semantic-info: #3498DB;
+  --semantic-warning: #F1C40F;
+
+  /* Neutral Colors */
+  --neutral-900: #2C3E50;
+  --neutral-800: #34495E;
+  --neutral-500: #7F8C8D;
+  --neutral-300: #BDC3C7;
+  --neutral-100: #ECF0F1;
+  --neutral-0: #FFFFFF;
+
+  /* Game Themes */
+  --poker-dark: #1A1A2E;
+  --poker-teal: #16A085;
+  --domino-purple: #9B59B6;
+  --ludo-blue: #2196F3;
+  --ludo-green: #4CAF50;
+}

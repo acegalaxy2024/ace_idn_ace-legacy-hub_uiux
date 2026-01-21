@@ -1,0 +1,689 @@
+/* ==================== RESPONSIVE PORTRAIT ==================== */
+
+/* Portrait mode for tablets and phones */
+@media (max-width: 768px), (orientation: portrait) {
+
+  /* ===== PORTAL HOME - PORTRAIT ===== */
+  .top-bar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 8px 12px;
+  }
+
+  .user-info {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+  }
+
+  .username {
+    font-size: 12px;
+  }
+
+  .currency-bar {
+    padding: 6px 12px;
+    gap: 12px;
+  }
+
+  .currency-value {
+    font-size: 14px;
+  }
+
+  .coin-icon, .diamond-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .vip-badge {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+
+  .top-actions {
+    width: 100%;
+    justify-content: space-between;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .action-btn {
+    flex: 0 0 auto;
+  }
+
+  .action-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .action-label {
+    font-size: 9px;
+  }
+
+  .menu-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-line {
+    width: 16px;
+    height: 2px;
+  }
+
+  /* Main Content - Portrait */
+  .main-content {
+    flex-direction: column;
+    padding: 8px;
+    gap: 8px;
+    overflow-y: auto;
+  }
+
+  .featured-section {
+    width: 100%;
+    min-height: 120px;
+    max-height: 150px;
+  }
+
+  .featured-banner {
+    border-radius: 16px;
+    border-width: 3px;
+  }
+
+  .featured-content h2 {
+    font-size: 20px;
+  }
+
+  .featured-content p {
+    font-size: 12px;
+  }
+
+  .mascot {
+    font-size: 60px;
+    right: 10px;
+  }
+
+  /* Game Section - Portrait (3 columns, 3 rows) */
+  .game-section {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  /* Featured Kamar Biasa spans full width in portrait */
+  .game-tile.featured {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    border-radius: 16px;
+    border-width: 3px;
+    flex-direction: row;
+    padding: 12px 20px;
+    gap: 16px;
+  }
+
+  .game-tile.featured .game-icon {
+    font-size: 40px;
+    margin-bottom: 0;
+  }
+
+  .game-tile.featured .game-name {
+    font-size: 14px;
+  }
+
+  .game-tile {
+    border-radius: 12px;
+    border-width: 2px;
+  }
+
+  .game-icon {
+    font-size: 28px;
+    margin-bottom: 4px;
+  }
+
+  .game-name {
+    font-size: 11px;
+  }
+
+  /* Bottom Navigation - Portrait */
+  .bottom-nav {
+    padding: 8px;
+    gap: 4px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-height: 160px;
+    overflow-y: auto;
+  }
+
+  .nav-item {
+    width: 56px;
+    height: 56px;
+  }
+
+  .nav-icon {
+    font-size: 18px;
+  }
+
+  .nav-label {
+    font-size: 8px;
+  }
+
+  /* Last Played Badge - Portrait */
+  .last-played {
+    bottom: 170px;
+    right: 10px;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+
+  .last-played-text {
+    font-size: 10px;
+  }
+
+  .last-played-game {
+    font-size: 9px;
+  }
+
+  /* ===== GAME LOBBY - PORTRAIT ===== */
+  .lobby-header {
+    padding: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .back-btn {
+    width: 44px;
+    height: 44px;
+    border-width: 2px;
+  }
+
+  .back-arrow {
+    font-size: 22px;
+  }
+
+  .title-text {
+    font-size: 28px;
+  }
+
+  .title-sparkles {
+    font-size: 12px;
+    letter-spacing: 4px;
+  }
+
+  .currency-display {
+    padding: 6px 12px 6px 8px;
+    border-width: 2px;
+  }
+
+  .coin-icon-lg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .currency-amount {
+    font-size: 16px;
+  }
+
+  /* Lobby Content - Portrait */
+  .lobby-content {
+    flex-direction: column;
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .lobby-sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 8px;
+  }
+
+  .sidebar-item {
+    padding: 10px 16px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .sidebar-icon {
+    font-size: 20px;
+  }
+
+  .sidebar-text {
+    font-size: 12px;
+  }
+
+  /* Room List - Portrait (Vertical Scroll) */
+  .room-list {
+    flex-direction: column;
+    padding: 12px;
+    gap: 12px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    align-items: stretch;
+  }
+
+  .room-card {
+    min-width: unset;
+    max-width: unset;
+    width: 100%;
+    height: auto;
+    min-height: 140px;
+    flex-direction: row;
+  }
+
+  .room-card-header {
+    width: 140px;
+    min-width: 140px;
+    min-height: 140px;
+    font-size: 24px;
+    border-radius: 20px 0 0 20px;
+  }
+
+  .room-card-header::before {
+    width: 70%;
+    height: 50%;
+    top: 15px;
+    border-width: 2px;
+  }
+
+  .room-card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px 16px;
+    text-align: left;
+  }
+
+  .room-bet {
+    font-size: 18px;
+  }
+
+  .room-players {
+    font-size: 14px;
+    justify-content: flex-start;
+  }
+
+  /* ===== SUB-GAME SELECTION - PORTRAIT ===== */
+  .subgame-content {
+    padding: 12px;
+  }
+
+  .subgame-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .subgame-card-icon {
+    height: 100px;
+    font-size: 48px;
+  }
+
+  .subgame-card-name {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  /* ===== ROOM SELECTION - PORTRAIT ===== */
+  .room-selection-header {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .room-selection-title {
+    font-size: 18px;
+    text-align: center;
+    order: 2;
+  }
+
+  .room-selection-header .back-btn {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+  }
+
+  .user-chip {
+    order: 1;
+    width: 100%;
+    justify-content: center;
+    padding: 6px 12px;
+    margin-top: 40px;
+  }
+
+  .user-chip .avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .user-chip .username {
+    font-size: 12px;
+  }
+
+  /* Table - Portrait (Card Style) */
+  .table-header {
+    display: none;
+  }
+
+  .table-body {
+    padding: 12px;
+  }
+
+  .table-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+
+  .table-row .name {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--neutral-900);
+  }
+
+  .table-row .stakes,
+  .table-row > div:nth-child(6) {
+    display: none;
+  }
+
+  .table-row .amount {
+    font-size: 24px;
+    color: var(--primary-orange);
+  }
+
+  .table-row .buyin {
+    font-size: 12px;
+  }
+
+  .table-row .players {
+    font-size: 14px;
+  }
+
+  .table-row > div:last-child {
+    margin-top: 8px;
+  }
+
+  .join-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    justify-content: center;
+  }
+
+  /* ===== GAMEPLAY - PORTRAIT ===== */
+  .gameplay-header {
+    padding: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .pause-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+  }
+
+  .pause-icon {
+    font-size: 20px;
+  }
+
+  .game-info {
+    flex: 1;
+    justify-content: center;
+    gap: 8px;
+    order: 3;
+    width: 100%;
+  }
+
+  .pot-display {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .timer-display {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .gameplay-header .currency-bar {
+    order: 2;
+  }
+
+  /* Game Board - Portrait */
+  .game-board {
+    padding: 12px;
+  }
+
+  .poker-table {
+    width: 95%;
+    aspect-ratio: 1.5/1;
+    border-width: 12px;
+    border-radius: 100px;
+  }
+
+  .poker-table-inner {
+    font-size: 24px;
+  }
+
+  .ludo-board {
+    width: 90%;
+    gap: 4px;
+    padding: 8px;
+  }
+
+  .board-placeholder {
+    width: 90%;
+  }
+
+  .board-text {
+    font-size: 20px;
+  }
+
+  /* Players Bar - Portrait */
+  .players-bar {
+    padding: 12px 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .player-slot {
+    gap: 4px;
+    min-width: 60px;
+  }
+
+  .player-avatar {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    border-width: 2px;
+  }
+
+  .player-name {
+    font-size: 11px;
+  }
+
+  .player-chips {
+    font-size: 10px;
+  }
+
+  /* ===== MODALS - PORTRAIT ===== */
+  .modal {
+    max-width: 95%;
+    max-height: 90%;
+    margin: 16px;
+  }
+
+  .modal-frame {
+    border-width: 4px;
+  }
+
+  .modal-header {
+    padding: 12px 16px;
+  }
+
+  .modal-decoration {
+    font-size: 28px;
+    left: -4px;
+    top: -8px;
+  }
+
+  .modal-title {
+    font-size: 18px;
+    margin-left: 24px;
+  }
+
+  .modal-close {
+    width: 32px;
+    height: 32px;
+  }
+
+  .modal-close-icon {
+    font-size: 16px;
+  }
+
+  .modal-content {
+    padding: 20px;
+    min-height: 150px;
+  }
+
+  .exit-modal-content h3 {
+    font-size: 18px;
+  }
+
+  .exit-modal-content p {
+    font-size: 14px;
+  }
+
+  .exit-modal-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .exit-btn {
+    width: 100%;
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  /* Loading - Portrait */
+  .loading-logo {
+    font-size: 48px;
+  }
+
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+  }
+
+  .loading-text {
+    font-size: 14px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 380px) {
+  .game-section {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto repeat(3, 1fr);
+  }
+
+  .game-tile.featured {
+    grid-column: 1 / -1;
+  }
+
+  .nav-item {
+    width: 48px;
+    height: 48px;
+  }
+
+  .nav-icon {
+    font-size: 16px;
+  }
+
+  .nav-label {
+    font-size: 7px;
+  }
+
+  .bottom-nav {
+    max-height: 120px;
+  }
+
+  .last-played {
+    bottom: 130px;
+  }
+
+  .room-card-header {
+    width: 80px;
+    min-width: 80px;
+    font-size: 20px;
+  }
+
+  .player-slot {
+    min-width: 50px;
+  }
+
+  .player-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .player-name {
+    font-size: 9px;
+  }
+
+  .player-chips {
+    font-size: 8px;
+  }
+}
+
+/* Landscape mode on mobile - keep horizontal layout */
+@media (max-height: 500px) and (orientation: landscape) {
+  .main-content {
+    flex-direction: row;
+  }
+
+  .featured-section {
+    width: 30%;
+    max-height: none;
+  }
+
+  .game-section {
+    grid-template-columns: 1.2fr repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .bottom-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    max-height: none;
+  }
+
+  .room-list {
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .room-card {
+    flex-direction: column;
+    min-width: 150px;
+    width: auto;
+  }
+
+  .room-card-header {
+    width: 100%;
+    min-width: unset;
+    border-radius: 16px 16px 0 0;
+  }
+}

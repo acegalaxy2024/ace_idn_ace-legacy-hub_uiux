@@ -1,0 +1,204 @@
+/* ==================== FORCE PORTRAIT FOR SPECIFIC GAMES ==================== */
+
+/* Rotate to Portrait prompt overlay */
+.rotate-prompt {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
+  z-index: 300;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.rotate-prompt.active {
+  display: flex;
+}
+
+.rotate-icon {
+  font-size: 80px;
+  margin-bottom: 24px;
+  animation: rotatePhone 2s ease-in-out infinite;
+}
+
+@keyframes rotatePhone {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-15deg); }
+  75% { transform: rotate(15deg); }
+}
+
+.rotate-text {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.rotate-subtext {
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.simulate-btn {
+  margin-top: 24px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-gold) 100%);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.simulate-btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.simulate-btn:active {
+  transform: scale(0.95);
+}
+
+/* When gameplay screen has force-portrait class in landscape mode */
+@media (orientation: landscape) and (min-width: 568px) {
+  /* Hide gameplay content when force-portrait is active (show rotate prompt) */
+  #gameplay.force-portrait .gameplay-content {
+    display: none;
+  }
+
+  /* Show rotate prompt */
+  #gameplay.force-portrait .rotate-prompt {
+    display: flex;
+  }
+
+  /* Alternative: Force portrait layout inside landscape viewport */
+  #gameplay.force-portrait.simulate-portrait {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+  }
+
+  #gameplay.force-portrait.simulate-portrait .rotate-prompt {
+    display: none;
+  }
+
+  #gameplay.force-portrait.simulate-portrait .gameplay-content {
+    display: flex;
+    flex-direction: column;
+    width: 56.25vh; /* 9:16 aspect ratio */
+    max-width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #1A1A2E 0%, #16213E 100%);
+    position: relative;
+    overflow: hidden;
+    border-left: 2px solid rgba(255,255,255,0.1);
+    border-right: 2px solid rgba(255,255,255,0.1);
+  }
+
+  /* Portrait-style header in simulated portrait */
+  #gameplay.force-portrait.simulate-portrait .gameplay-header {
+    padding: 8px 12px;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  #gameplay.force-portrait.simulate-portrait .pause-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  #gameplay.force-portrait.simulate-portrait .game-info {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  #gameplay.force-portrait.simulate-portrait .pot-display {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+
+  #gameplay.force-portrait.simulate-portrait .timer-display {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  #gameplay.force-portrait.simulate-portrait .currency-bar {
+    padding: 4px 10px;
+  }
+
+  #gameplay.force-portrait.simulate-portrait .currency-value {
+    font-size: 12px;
+  }
+
+  /* Portrait-style game board */
+  #gameplay.force-portrait.simulate-portrait .game-board {
+    flex: 1;
+    padding: 8px;
+  }
+
+  #gameplay.force-portrait.simulate-portrait .poker-table {
+    width: 95%;
+    aspect-ratio: 1.2/1;
+    border-width: 10px;
+    border-radius: 80px;
+  }
+
+  #gameplay.force-portrait.simulate-portrait .poker-table-inner {
+    font-size: 18px;
+  }
+
+  #gameplay.force-portrait.simulate-portrait .ludo-board {
+    width: 85%;
+    max-width: none;
+    gap: 3px;
+    padding: 6px;
+  }
+
+  /* Portrait-style players bar */
+  #gameplay.force-portrait.simulate-portrait .players-bar {
+    padding: 8px;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+  }
+
+  #gameplay.force-portrait.simulate-portrait .player-slot {
+    min-width: 50px;
+    gap: 2px;
+  }
+
+  #gameplay.force-portrait.simulate-portrait .player-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    border-width: 2px;
+  }
+
+  #gameplay.force-portrait.simulate-portrait .player-name {
+    font-size: 9px;
+  }
+
+  #gameplay.force-portrait.simulate-portrait .player-chips {
+    font-size: 8px;
+  }
+}
+
+/* In portrait mode, force-portrait games display normally */
+@media (orientation: portrait) {
+  #gameplay.force-portrait .rotate-prompt {
+    display: none;
+  }
+
+  #gameplay.force-portrait .gameplay-content {
+    display: flex;
+  }
+}
